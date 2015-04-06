@@ -1,4 +1,5 @@
 Group members:
 
 150-400 Word Description:
-  (We/I) propose to ...
+  I propose to ...
+  	I have always been interested how closely certain topics are related topics. One of the greatest web of knowledge on the internet is Wikipedia. Each wiki page on a topic is filled with many links to other topics that are conceivably related. My question is, what is the shortest path between one topic and another? And from that, can we use that to determine how related certain topics are. If you have ever played the WikipediaGame (see this link:  http://thewikigame.com/) this could also conceivable be used to write a bot to play/win the game. To do this I will probably on using the requests library that we learned in class to get the link pages and beautifulSoup to parse the pages for links. I may also use the json library if applicable. Using the data I get from finding the shortest path, I want to use the very simple linear regression from the scikit module (scikit learn) to perform some machine learning on the data and see if I can use the shortest path to develop a useful analysis on the relatedness of certain topics. It is also possible that I turn this into a webapp that people can use to see the shortest path between topics themselves.
