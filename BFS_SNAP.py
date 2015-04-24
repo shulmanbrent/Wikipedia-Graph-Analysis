@@ -1,14 +1,10 @@
-''' Final Project
-- This file will before BFS on links to find path from one topic to another
-'''
 
-from Page_Web import Page_Web
+from Page_SNAP import Page_SNAP
 
-# Assumes it is given properly formatted Wikipedia page URL's
-def BFS(start_page_url, end_page_url):
-    goal = Page_Web(end_page_url, None)
+def BFS(start_page_name, end_page_name):
+    goal = Page_SNAP(end_page_name, None)
     q = list()
-    start = Page_Web(start_page_url, None)
+    start = Page_SNAP(start_page_name, None)
     q.append(start)
     total = 0
     visited = set()
@@ -20,12 +16,14 @@ def BFS(start_page_url, end_page_url):
         visited.add(page)
         children = page.getChildren()
         for child in children:
+            if child in visited:
+                continue
             if child == goal:
-                print("\nFound!\n")
+                print("\nFound!\n\n")
                 while (child.parent != None):
-                    print(child.url + "<-")
+                    print(child.title + "<-")
                     child = child.parent
-                print child.url
+                print child.title
                 return
             else:
                 q.insert(0, child)

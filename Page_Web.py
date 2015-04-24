@@ -1,19 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 
-class Page(object):
+class Page_Web(object):
 
     # Constructor
     def __init__(self, url, parent):
         self.url = url
-        self.title = self.__getTitle__(url)
         self.parent = parent
 
-    # Gets the title of an aritcle from the url of a wikipedia page
-    def __getTitle__(self, url):
-        r = requests.get(url)
-        soup = BeautifulSoup(r.text)
-        return soup.find(id = "firstHeading").text
 
     def getChildren(self):
         print(self.url)
@@ -34,7 +28,7 @@ class Page(object):
                 # Formats the wikipedia links correctly
                 l = "http://en.wikipedia.org" + l
                 # Create new child page object with parent pointer set
-                page = Page(l, self)
+                page = Page_Web(l, self)
                 # Add child page to set of children
                 children.add(page)
 
