@@ -8,7 +8,6 @@ class Page(object):
         self.url = url
         self.title = self.__getTitle__(url)
         self.parent = parent
-        #self.children = self.getChildren()
 
     # Gets the title of an aritcle from the url of a wikipedia page
     def __getTitle__(self, url):
@@ -42,7 +41,7 @@ class Page(object):
         return children
 
     def __eq__(self, page):
-        # NEED TO ADD ERROR TO THROW IF TYPES ARE NOT THE SAME
+        # TODO: ADD ERROR TO THROW IF TYPES ARE NOT THE SAME
 
         return (page.url == self.url)
 
