@@ -15,11 +15,11 @@ def BFS(start_page_url, end_page_url):
     while(len(q) != 0):
         total += 1
         page = q.pop()
-        if page in visited:
-            continue
         visited.add(page)
         children = page.getChildren()
         for child in children:
+            if child in visited:
+                continue
             if child == goal:
                 print("\nFound!\n")
                 while (child.parent != None):
