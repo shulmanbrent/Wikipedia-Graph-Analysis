@@ -30,7 +30,7 @@ class Page_SNAP(object):
             if "/wp/" not in s:
                 continue
             s = '\\wpcd' + s.replace("/", "\\")
-            print s
+
             page = Page_SNAP(s, self)
             # Add child page to set of children
             children.add(page)
